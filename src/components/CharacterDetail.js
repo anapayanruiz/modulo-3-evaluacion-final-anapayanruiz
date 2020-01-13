@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
 
@@ -8,6 +8,9 @@ const CharacterDetail = (props) => {
 
   return (
     <div>
+      <Link to='/'>
+        <button className="fas fa-backward form__btn"></button>
+      </Link>
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <ul>

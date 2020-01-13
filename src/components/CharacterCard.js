@@ -12,7 +12,11 @@ const CharacterCard = (props) => {
     <div>
       <Link to={route}>
         <img src={image} alt={name} />
+      </Link>
+      <Link to={route}>
         <h3>{name}</h3>
+      </Link>
+      <Link to={route}>
         <p>{species}</p>
       </Link>
     </div>
