@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 1.5rem;
+  margin: 2rem;
+  background-color: $colorLightGreyBlue;
+
+  &__image {
+    max-height: 22rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  &:hover {
+    background-color: $colorGreen;
+    box-shadow: 0.2rem 0.2rem 2.5rem $colorWhite;
+    transition-duration: 0.4s;
+  }
+
+  &__title {
+    @include CardTitle;
+  }
+
+  &__text {
+    @include CardText;
+  }
+
+  &__icon {
+    @include CardsIcons;
+  }
+
+  &__btn {
+    @include CardButton;
+  }
+}

@@ -72,11 +72,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="page">
         <Header alt="Ricky y Morty logo" />
-        <Filters handleSearch={this.handleSearch} />
         <Switch>
           <Route exact path='/'>
+            <Filters handleSearch={this.handleSearch} />
             <CharacterList characters={this.filterBySearch()} />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail}>

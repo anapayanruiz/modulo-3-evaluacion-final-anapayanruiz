@@ -18,19 +18,17 @@ const CharacterCard = (props) => {
   const route = `/character/${id}`;
 
   return (
-    <div>
-      <li >
-        <Link to={route}>
-          <img src={image} alt={name} />
-        </Link>
-        <Link to={route}>
-          <h3 >{name}</h3>
-        </Link>
-        <Link to={route}>
-          <p >{iconCard()}</p>
-        </Link>
-      </li>
-    </div >
+    <li className="card">
+      <Link to={route}>
+        <img className="card__image" src={image} alt={name} />
+      </Link>
+      <Link to={route}>
+        <h3 className="card__title">{name}</h3>
+      </Link>
+      <Link to={route}>
+        <p className="card__icon">{iconCard()}</p>
+      </Link>
+    </li>
   );
 }
 

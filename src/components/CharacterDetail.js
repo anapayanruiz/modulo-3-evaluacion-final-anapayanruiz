@@ -17,19 +17,21 @@ const CharacterDetail = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <Link to='/'>
-        <button className="fas fa-backward form__btn"></button>
+        <button className="fas fa-backward card__btn"></button>
       </Link>
-      <img src={image} alt={name} />
-      <h3>{name}</h3>
-      <ul>
-        <li>Status: {iconsDetail()}</li>
-        <li>Species: {species}</li>
-        <li>Origin: {origin.name}</li>
-        <li>Episodes: {episode.length}</li>
-      </ul>
-    </div >
+      <div className="card">
+        <img className="card__image" src={image} alt={name} />
+        <h3 className="card__title">{name}</h3>
+        <ul>
+          <li className="card__icon">Status: {iconsDetail()}</li>
+          <li className="card__text">Species: {species}</li>
+          <li className="card__text">Origin: {origin.name}</li>
+          <li className="card__text">Episodes: {episode.length}</li>
+        </ul>
+      </div >
+    </React.Fragment>
   );
 }
 

@@ -7,7 +7,7 @@ const CharacterList = (props) => {
     return <p>Personajes no encontrados</p>
   } else {
     return (
-      <ul>
+      <ul className="cards">
         {props.characters.map(character => {
           return (
             <CharacterCard
