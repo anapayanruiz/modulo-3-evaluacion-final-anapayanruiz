@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       characters: []
     };
-
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
 
@@ -27,6 +27,20 @@ class App extends React.Component {
     }));
   }
 
+  // render
+
+  renderCharacterDetail(props) {
+    console.log(props.match.params.id, this.state.characters);
+    const routeId = parseInt(props.match.params.id);
+    const character = this.state.characters.find(character => character.id === routeId);
+    console.log(character);
+    if (character === undefined) {
+      return <p>Detalles personaje no encontrado</p>
+    } else {
+      return <CharacterDetail character={character} />
+    }
+  }
+
 
   render() {
     return (
@@ -37,8 +51,7 @@ class App extends React.Component {
           <Route exact path='/'>
             <CharacterList characters={this.state.characters} />
           </Route>
-          <Route>
-            <CharacterDetail path='/characters/:id' />
+          <Route path='/characters/:id' render={this.renderCharacterDetail}>
           </Route>
         </Switch>
       </div>
