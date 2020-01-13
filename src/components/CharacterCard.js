@@ -2,13 +2,15 @@ import React from 'react';
 
 
 const CharacterCard = (props) => {
-  console.log(props);
+  console.log(props.character.species);
+
+  const { name, image, species } = props.character
 
   return (
     <div>
-      <img />
-      <h3>Rick Sanchez</h3>
-      <p>Human</p>
+      <img src={image} alt={name} />
+      <h3>{name}</h3>
+      <p>{species}</p>
     </div>
   );
 }
