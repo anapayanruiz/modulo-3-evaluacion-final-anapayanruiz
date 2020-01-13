@@ -8,7 +8,7 @@
     @include InputSearch;
 
     &::placeholder {
-      font-family: $fontFamilyTitle;
+      font-family: $fontFamily;
       color: $colorDarkGrey;
       font-size: $fontSizeText;
     }

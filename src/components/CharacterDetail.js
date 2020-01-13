@@ -8,11 +8,11 @@ const CharacterDetail = (props) => {
 
   const iconsDetail = () => {
     if (status === 'Alive') {
-      return <i class="fas fa-laugh-beam"></i>
+      return <i className="fas fa-laugh-beam"></i>
     } else if (status === 'Dead') {
-      return <i class="fas fa-skull-crossbones"></i>
+      return <i className="fas fa-skull-crossbones"></i>
     } else if (status === 'unknown') {
-      return <i class="fas fa-question"></i>
+      return <i className="fas fa-question"></i>
     }
   };
 

@@ -7,7 +7,7 @@
   background-color: $colorLightGreyBlue;
 
   &__image {
-    max-height: 22rem;
+    min-height: 22rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }

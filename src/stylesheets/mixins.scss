@@ -1,5 +1,5 @@
 @mixin CardTitle {
-  font-family: $fontFamilyTitle;
+  font-family: $fontFamily;
   font-size: $fontSizeCardTitle;
   font-weight: $fontWeightCardTitle;
   color: $colorDarkGrey;
@@ -8,7 +8,7 @@
 }
 
 @mixin CardText {
-  font-family: $fontFamilyTitle;
+  font-family: $fontFamily;
   font-size: $fontSizeCardText;
   font-weight: $fontWeightCardTitle;
   color: $colorDarkGrey;
@@ -17,8 +17,7 @@
 
 @mixin CardsIcons {
   font-weight: $fontWeightCardTitle;
-  font-family: "Font Awesome 5";
-  font-family: $fontFamilyTitle;
+  font-family: $fontFamily;
   font-size: $fontSizeCardText;
   color: $colorDarkGrey;
   text-align: $textTransformTitle;
@@ -31,7 +30,7 @@
   text-align: $textTransformTitle;
   border: 0.3rem solid $colorGreen;
   background-color: $colorBlack;
-  font-family: $fontFamilyTitle;
+  font-family: $fontFamily;
   font-size: $fontSizeCardTitle;
   color: $colorDarkGrey;
 }
