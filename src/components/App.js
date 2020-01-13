@@ -35,7 +35,7 @@ class App extends React.Component {
     const character = this.state.characters.find(character => character.id === routeId);
     console.log(character);
     if (character === undefined) {
-      return <p>Detalles personaje no encontrado</p>
+      return <p>Personaje no encontrado</p>
     } else {
       return <CharacterDetail character={character} />
     }
@@ -51,7 +51,7 @@ class App extends React.Component {
           <Route exact path='/'>
             <CharacterList characters={this.state.characters} />
           </Route>
-          <Route path='/characters/:id' render={this.renderCharacterDetail}>
+          <Route path='/character/:id' render={this.renderCharacterDetail}>
           </Route>
         </Switch>
       </div>

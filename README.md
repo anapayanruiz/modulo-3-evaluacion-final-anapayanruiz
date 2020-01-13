@@ -5,6 +5,6 @@
 - [x] Crear repositorio.
 - [x] Dividir en componentes
 - [x] Importar datos desde API con fetch y guardarlo en el estado
+- [x] Usar los datos del API
 - [ ] Crear router
-- [ ] Usar los datos del API
 - [ ] Filtrar por campo de texto
