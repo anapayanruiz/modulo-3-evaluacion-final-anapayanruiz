@@ -52,7 +52,7 @@ class App extends React.Component {
 
   filter = (array, atribute, search) => {
     return array.filter(item => {
-      return item[atribute].toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      return item[atribute].trim().toLocaleLowerCase().includes(search.trim().toLocaleLowerCase())
     });
   }
 
