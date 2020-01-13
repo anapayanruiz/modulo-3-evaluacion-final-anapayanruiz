@@ -2,19 +2,24 @@ import React from 'react';
 import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
-import fetchCharacter from '../services/FetchCharacters';
+import fetchCharacters from '../services/fetchCharacters';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      characters: []
+    };
+
   }
 
 
   // api
 
   componentDidMount() {
-    fetchCharacter().then(characters => this.setState({
+
+    fetchCharacters().then(characters => this.setState({
       characters: characters
     }));
   }
@@ -25,7 +30,7 @@ class App extends React.Component {
       <div className="page">
         <Header />
         <Filters />
-        <CharacterList />
+        <CharacterList characters={this.state.characters} />
       </div>
     );
   }

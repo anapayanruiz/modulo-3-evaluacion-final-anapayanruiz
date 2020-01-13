@@ -3,8 +3,8 @@
 # Tareas
 
 - [x] Crear repositorio.
-- [ ] Dividir en componentes
-- [ ] Importar datos desde API con fetch y guardarlo en el estado
+- [x] Dividir en componentes
+- [x] Importar datos desde API con fetch y guardarlo en el estado
 - [ ] Crear router
 - [ ] Usar los datos del API
 - [ ] Filtrar por campo de texto
