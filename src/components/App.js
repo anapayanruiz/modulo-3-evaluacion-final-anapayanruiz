@@ -12,9 +12,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: []
+      characters: [],
+      search: ''
     };
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -26,6 +28,18 @@ class App extends React.Component {
       characters: characters
     }));
   }
+
+
+
+  // events
+
+  handleChange(data) {
+    this.setState({
+      search: data
+    })
+  }
+
+
 
   // render
 
@@ -43,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="page">
-        <Header />
+        <Header handleChange={this.handleChange} />
         <Filters />
         <Switch>
           <Route exact path='/'>
