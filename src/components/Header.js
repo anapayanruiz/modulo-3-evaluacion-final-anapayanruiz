@@ -5,7 +5,7 @@ import '../stylesheets/Header.scss';
 
 const Header = (props) => {
   return (
-    <header >
+    <header  >
       <img src={logo} alt={props.alt} />
     </header >
   );

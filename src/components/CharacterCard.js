@@ -5,35 +5,32 @@ import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
 
-
-
   const { id, name, image, species } = props.character
 
-  const icon = () => {
+  const iconCard = () => {
     if (species === 'Human') {
-      return (
-        <i className="fas fa-smile-beam"></i>
-      )
+      return <i className="fas fa-user-alt"></i>
     } else if (species === 'Alien') {
-      return (
-        <i className="fab fa-reddit-alien"></i>)
+      return <i className="fas fa-hand-spock"></i>
     }
   };
 
   const route = `/character/${id}`;
 
   return (
-    <li>
-      <Link to={route}>
-        <img src={image} alt={name} />
-      </Link>
-      <Link to={route}>
-        <h3>{name}</h3>
-      </Link>
-      <Link to={route}>
-        <p>{icon()}</p>
-      </Link>
-    </li>
+    <div>
+      <li >
+        <Link to={route}>
+          <img src={image} alt={name} />
+        </Link>
+        <Link to={route}>
+          <h3 >{name}</h3>
+        </Link>
+        <Link to={route}>
+          <p >{iconCard()}</p>
+        </Link>
+      </li>
+    </div >
   );
 }
 

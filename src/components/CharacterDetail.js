@@ -6,6 +6,15 @@ const CharacterDetail = (props) => {
 
   const { image, name, status, species, origin, episode } = props.character
 
+  const iconsDetail = () => {
+    if (status === 'Alive') {
+      return <i class="fas fa-laugh-beam"></i>
+    } else if (status === 'Dead') {
+      return <i class="fas fa-skull-crossbones"></i>
+    } else if (status === 'unknown') {
+      return <i class="fas fa-question"></i>
+    }
+  };
 
   return (
     <div>
@@ -15,7 +24,7 @@ const CharacterDetail = (props) => {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <ul>
-        <li>Status: {status}</li>
+        <li>Status: {iconsDetail()}</li>
         <li>Species: {species}</li>
         <li>Origin: {origin.name}</li>
         <li>Episodes: {episode.length}</li>
