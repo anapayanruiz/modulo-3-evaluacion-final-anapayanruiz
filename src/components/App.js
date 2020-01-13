@@ -3,6 +3,9 @@ import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import fetchCharacters from '../services/fetchCharacters';
+import { Route, Switch } from 'react-router-dom';
+import CharacterDetail from './CharacterDetail';
+
 
 
 class App extends React.Component {
@@ -30,7 +33,14 @@ class App extends React.Component {
       <div className="page">
         <Header />
         <Filters />
-        <CharacterList characters={this.state.characters} />
+        <Switch>
+          <Route exact path='/'>
+            <CharacterList characters={this.state.characters} />
+          </Route>
+          <Route>
+            <CharacterDetail path='/characters/:id' />
+          </Route>
+        </Switch>
       </div>
     );
   }
