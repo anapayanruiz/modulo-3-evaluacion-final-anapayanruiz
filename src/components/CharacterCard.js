@@ -10,7 +10,7 @@ const CharacterCard = (props) => {
   const route = `/character/${id}`;
 
   return (
-    <div>
+    <li>
       <Link to={route}>
         <img src={image} alt={name} />
       </Link>
@@ -20,7 +20,7 @@ const CharacterCard = (props) => {
       <Link to={route}>
         <p>{species}</p>
       </Link>
-    </div>
+    </li>
   );
 }
 

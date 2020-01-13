@@ -1,11 +1,13 @@
 import React from 'react';
+import logo from '../images/logo.png';
+import '../stylesheets/Header.scss';
 
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <div>
-      <h1 className="title">Ricky y Morty</h1>
-    </div>
+    <header className="title" >
+      <img src={logo} alt={props.alt} class="img-fluid" alt="Responsive image" />
+    </header >
   );
 }
 

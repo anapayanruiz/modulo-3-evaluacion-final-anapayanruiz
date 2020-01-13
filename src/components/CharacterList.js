@@ -7,7 +7,7 @@ const CharacterList = (props) => {
     return <p>Personajes no encontrados</p>
   } else {
     return (
-      <div>
+      <ul>
         {props.characters.map(character => {
           return (
             <CharacterCard
@@ -16,7 +16,7 @@ const CharacterList = (props) => {
             />
           )
         })}
-      </div>
+      </ul>
     );
   }
 };

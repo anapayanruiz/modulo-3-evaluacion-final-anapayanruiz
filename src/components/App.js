@@ -5,6 +5,7 @@ import CharacterList from './CharacterList';
 import fetchCharacters from '../services/fetchCharacters';
 import { Route, Switch } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
+import '../stylesheets/App.scss';
 
 
 
@@ -44,10 +45,8 @@ class App extends React.Component {
   // filter
 
   filterBySearch() {
-
     const characters = this.state.characters;
     const search = this.state.search;
-    debugger;
     return this.filter(characters, 'name', search);
   }
 
@@ -56,8 +55,6 @@ class App extends React.Component {
       return item[atribute].toLocaleLowerCase().includes(search.toLocaleLowerCase())
     });
   }
-
-
 
 
   // render
@@ -75,8 +72,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="page">
-        <Header />
+      <div className="container">
+        <Header alt="Ricky y Morty logo" />
         <Filters handleSearch={this.handleSearch} />
         <Switch>
           <Route exact path='/'>
