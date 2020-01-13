@@ -7,5 +7,5 @@
 - [x] Importar datos desde API con fetch y guardarlo en el estado
 - [x] Usar los datos del API
 - [x] Crear router
-- [ ] Uso de propTypes
-- [ ] Filtrar por campo de texto
+- [x] Uso de propTypes
+- [x] Filtrar por campo de texto

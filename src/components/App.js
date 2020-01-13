@@ -8,6 +8,7 @@ import CharacterDetail from './CharacterDetail';
 
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,7 @@ class App extends React.Component {
       search: ''
     };
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
 
@@ -33,11 +34,29 @@ class App extends React.Component {
 
   // events
 
-  handleChange(data) {
+  handleSearch(data) {
     this.setState({
-      search: data
+      search: data.value
     })
   }
+
+
+  // filter
+
+  filterBySearch() {
+
+    const characters = this.state.characters;
+    const search = this.state.search;
+    debugger;
+    return this.filter(characters, 'name', search);
+  }
+
+  filter = (array, atribute, search) => {
+    return array.filter(item => {
+      return item[atribute].toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    });
+  }
+
 
 
 
@@ -57,11 +76,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="page">
-        <Header handleChange={this.handleChange} />
-        <Filters />
+        <Header />
+        <Filters handleSearch={this.handleSearch} />
         <Switch>
           <Route exact path='/'>
-            <CharacterList characters={this.state.characters} />
+            <CharacterList characters={this.filterBySearch()} />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail}>
           </Route>

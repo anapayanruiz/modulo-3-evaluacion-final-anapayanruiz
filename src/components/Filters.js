@@ -4,8 +4,8 @@ import React from 'react';
 
 const Filters = (props) => {
 
-  function handleChange(ev) {
-    props.handleChange({
+  const handleSearch = (ev) => {
+    props.handleSearch({
       value: ev.target.value
     });
   }
@@ -16,7 +16,7 @@ const Filters = (props) => {
         className="form__input-text"
         type="text"
         placeholder="Buscar personaje"
-        onChange={handleChange}
+        onChange={handleSearch}
       />
     </form>
   );
