@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
@@ -22,5 +23,13 @@ const CharacterCard = (props) => {
     </div>
   );
 }
+
+CharacterCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  species: PropTypes.string,
+};
+
 
 export default CharacterCard;
