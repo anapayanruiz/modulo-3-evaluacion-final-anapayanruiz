@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const CharacterCard = (props) => {
-  console.log(props.character.species);
 
   const { name, image, species } = props.character
 
