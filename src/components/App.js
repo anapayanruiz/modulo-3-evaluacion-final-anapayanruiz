@@ -16,7 +16,7 @@ class App extends React.Component {
     this.state = {
       characters: [],
       searchInput: '',
-      searchRadio: 'Female',
+      searchRadio: 'all',
     };
 
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);

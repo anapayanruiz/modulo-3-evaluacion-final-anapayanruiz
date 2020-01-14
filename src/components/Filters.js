@@ -30,6 +30,15 @@ const Filters = (props) => {
         onChange={handleSearch}
       />
       <div className="form--radio">
+        <label htmlFor="all" className="form--radio__label">Todos</label>
+        <input
+          id="all"
+          type="radio"
+          value="all"
+          name="gender"
+          defaultChecked={props.searchRadio === 'all'}
+          onClick={handleClick}
+        />
         <label htmlFor="Male" className="form--radio__label">Masculino</label>
         <input
           id="Male"
@@ -59,16 +68,7 @@ const Filters = (props) => {
           onClick={handleClick}
 
         />
-        <label htmlFor="unknown" className="form--radio__label">Todos</label>
-        <input
-          id="unknown"
-          type="radio"
-          value="all"
-          name="gender"
-          defaultChecked={props.searchRadio === 'unknown'}
-          onClick={handleClick}
 
-        />
       </div>
     </form>
   );
