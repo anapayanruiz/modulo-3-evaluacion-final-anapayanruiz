@@ -13,4 +13,4 @@
 # Bonus
 
 - [x] Añadir estilos
-- [ ] Filtrar por button radio: especie
+- [x] Filtrar por button radio: especie
