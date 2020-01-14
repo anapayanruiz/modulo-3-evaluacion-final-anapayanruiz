@@ -87,7 +87,6 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.searchRadio, this.state.searchInput);
     return (
       <div className="page" >
         <Header alt="Ricky y Morty logo" />
