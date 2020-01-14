@@ -3,18 +3,24 @@ import CharacterCard from './CharacterCard';
 
 
 const CharacterList = (props) => {
-  return (
-    <ul className="cards">
-      {props.characters.map(character => {
-        return (
-          <CharacterCard
-            key={character.id}
-            character={character}
-          />
-        )
-      })}
-    </ul>
-  );
+
+  if (props.characters.length === 0) {
+    return <p className="card__title">Los personajes encontrados no coinciden con la búsqueda</p>
+  } else {
+    return (
+      <ul className="cards">
+        {props.characters.map(character => {
+          return (
+            <CharacterCard
+              key={character.id}
+              character={character}
+            />
+          )
+        })}
+      </ul>
+    );
+  }
+
 };
 
 export default CharacterList;
