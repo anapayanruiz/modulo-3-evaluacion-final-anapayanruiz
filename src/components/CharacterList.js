@@ -3,22 +3,18 @@ import CharacterCard from './CharacterCard';
 
 
 const CharacterList = (props) => {
-  if (props.characters.length === 0) {
-    return <p>Personajes no encontrados</p>
-  } else {
-    return (
-      <ul className="cards">
-        {props.characters.map(character => {
-          return (
-            <CharacterCard
-              key={character.id}
-              character={character}
-            />
-          )
-        })}
-      </ul>
-    );
-  }
+  return (
+    <ul className="cards">
+      {props.characters.map(character => {
+        return (
+          <CharacterCard
+            key={character.id}
+            character={character}
+          />
+        )
+      })}
+    </ul>
+  );
 };
 
 export default CharacterList;
