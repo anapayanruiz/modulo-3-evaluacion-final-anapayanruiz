@@ -3,7 +3,7 @@
   font-family: $fontFamily;
   font-size: $fontSizeCardTitle;
   font-weight: $fontWeightCard;
-  text-align: $textTransformCard;
+  text-align: $textTransform;
   padding: 0.5rem;
 }
 
@@ -12,7 +12,7 @@
   font-family: $fontFamily;
   font-size: $fontSizeCardText;
   font-weight: $fontWeightCard;
-  text-align: $textTransformCard;
+  text-align: $textTransform;
 }
 
 @mixin CardsIcons {
@@ -20,11 +20,11 @@
   font-family: $fontFamily;
   font-size: $fontSizeCardText;
   font-weight: $fontWeightCard;
-  text-align: $textTransformCard;
+  text-align: $textTransform;
 }
 
 @mixin InputSearch {
-  width: 30rem;
+  width: 20rem;
   height: 4rem;
   margin: 3rem 0 4rem;
   color: $colorWhite;
@@ -33,7 +33,7 @@
   border-radius: 1rem;
   border: 0.3rem solid $colorGreen;
   background-color: $colorBlack;
-  text-align: $textTransformCard;
+  text-align: $textTransform;
 
   &:focus {
     background-color: $colorGreen;

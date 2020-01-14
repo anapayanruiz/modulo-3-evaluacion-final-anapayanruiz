@@ -4,8 +4,13 @@
   justify-content: center;
   border-radius: 1.5rem;
   margin: 2rem;
+  border: $colorGreen 0.3rem solid;
   background-color: $colorBlue;
   width: 18rem;
+
+  @media all and (min-width: 768px) {
+    width: 22rem;
+  }
 
   &__image {
     border-top-left-radius: 1rem;
@@ -33,5 +38,15 @@
 
   &__btn {
     @include CardButton;
+  }
+
+  &--detail {
+    padding: 2rem;
+
+    &__image {
+      border-radius: 50%;
+      height: 30%;
+      padding: 2rem;
+    }
   }
 }

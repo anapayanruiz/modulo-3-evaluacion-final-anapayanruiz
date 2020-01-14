@@ -21,8 +21,8 @@ const CharacterDetail = (props) => {
       <Link to='/'>
         <button className="fas fa-backward card__btn"></button>
       </Link>
-      <div className="card">
-        <img className="card__image" src={image} alt={name} />
+      <div className="card--detail">
+        <img className="card--detail__image" src={image} alt={name} />
         <h3 className="card__title">{name}</h3>
         <ul>
           <li className="card__icon">Status: {iconsDetail()}</li>

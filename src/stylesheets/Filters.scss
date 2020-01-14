@@ -7,6 +7,10 @@
   &__input {
     @include InputSearch;
 
+    @media all and (min-width: 768px) {
+      width: 30rem;
+    }
+
     &::placeholder {
       font-family: $fontFamily;
       color: $colorDarkGrey;
