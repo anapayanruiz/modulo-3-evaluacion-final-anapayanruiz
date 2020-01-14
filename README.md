@@ -8,4 +8,9 @@
 - [x] Usar los datos del API
 - [x] Crear router
 - [x] Uso de propTypes
-- [x] Filtrar por campo de texto
+- [x] Filtrar por campo de texto: nombre
+
+# Bonus
+
+- [x] Añadir estilos
+- [ ] Filtrar por button radio: especie
