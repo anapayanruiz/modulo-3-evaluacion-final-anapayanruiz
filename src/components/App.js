@@ -76,7 +76,7 @@ class App extends React.Component {
         <Header alt="Ricky y Morty logo" />
         <Switch>
           <Route exact path='/'>
-            <Filters handleSearch={this.handleSearch} />
+            <Filters search={this.state.search} handleSearch={this.handleSearch} />
             <CharacterList characters={this.filterBySearch()} />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail}>

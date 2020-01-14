@@ -16,6 +16,7 @@ const Filters = (props) => {
         className="form__input"
         type="text"
         placeholder="Buscar personaje"
+        search={props.search}
         onChange={handleSearch}
       />
     </form>
