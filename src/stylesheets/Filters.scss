@@ -4,6 +4,17 @@
   align-items: center;
   justify-content: center;
 
+  &--radio {
+    margin: 2rem;
+
+    &__label {
+      margin: 0rem 1.5rem;
+      color: $colorWhite;
+      font-family: $fontFamily;
+      font-size: $fontSizeCardTitle;
+    }
+  }
+
   &__input {
     @include InputSearch;
 

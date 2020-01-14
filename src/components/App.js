@@ -15,10 +15,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       characters: [],
-      search: ''
+      searchInput: '',
+      searchRadio: 'Female',
     };
+
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -37,7 +40,13 @@ class App extends React.Component {
 
   handleSearch(data) {
     this.setState({
-      search: data.value
+      searchInput: data.valueInput
+    })
+  }
+
+  handleClick(data) {
+    this.setState({
+      searchRadio: data.valueRadio
     })
   }
 
@@ -45,14 +54,21 @@ class App extends React.Component {
   // filter
 
   filterBySearch() {
-    const characters = this.state.characters;
-    const search = this.state.search;
-    return this.filter(characters, 'name', search);
+    let characters = this.state.characters;
+    const searchInput = this.state.searchInput;
+    const searchRadio = this.state.searchRadio;
+    if (searchRadio !== 'all') {
+      characters = this.filter(characters, 'gender', searchRadio, true);
+    }
+    characters = this.filter(characters, 'name', searchInput, false);
+    return characters;
   }
 
-  filter = (array, atribute, search) => {
+  filter = (array, atribute, search, equal) => {
     return array.filter(item => {
-      return item[atribute].trim().toLocaleLowerCase().includes(search.trim().toLocaleLowerCase())
+      return equal
+        ? item[atribute] === search
+        : item[atribute].trim().toLocaleLowerCase().includes(search.trim().toLocaleLowerCase())
     });
   }
 
@@ -71,12 +87,17 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state.searchRadio, this.state.searchInput);
     return (
       <div className="page" >
         <Header alt="Ricky y Morty logo" />
         <Switch>
           <Route exact path='/'>
-            <Filters search={this.state.search} handleSearch={this.handleSearch} />
+            <Filters
+              searchRadio={this.state.searchRadio}
+              searchInput={this.state.searchInput}
+              handleClick={this.handleClick}
+              handleSearch={this.handleSearch} />
             <CharacterList characters={this.filterBySearch()} />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail}>
