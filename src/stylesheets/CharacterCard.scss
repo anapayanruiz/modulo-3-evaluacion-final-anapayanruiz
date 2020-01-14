@@ -4,12 +4,13 @@
   justify-content: center;
   border-radius: 1.5rem;
   margin: 2rem;
-  background-color: $colorLightGreyBlue;
+  background-color: $colorBlue;
+  width: 18rem;
 
   &__image {
-    min-height: 22rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    width: 100%;
   }
 
   &:hover {

@@ -10,11 +10,11 @@
     &::placeholder {
       font-family: $fontFamily;
       color: $colorDarkGrey;
-      font-size: $fontSizeText;
+      font-size: $fontSizeCardText;
     }
 
     &:hover {
-      box-shadow: 0.2rem 0.2rem 2.5rem $colorGreen;
+      box-shadow: 0.2rem 0.2rem 2.5rem $colorWhite;
     }
   }
 }
