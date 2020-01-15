@@ -16,6 +16,12 @@ const Filters = (props) => {
     })
   }
 
+  const handleCheck = (ev) => {
+    props.handleCheck({
+      valueCheck: ev.target.checked
+    })
+  }
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
@@ -66,6 +72,16 @@ const Filters = (props) => {
           name="gender"
           defaultChecked={props.searchRadio === 'unknown'}
           onClick={handleClick}
+
+        />
+        <label htmlFor="location" className="form--radio__label">viven=origen</label>
+        <input
+          id="location"
+          type="checkbox"
+          value="location"
+          name="location"
+          defaultChecked={props.searchCheck}
+          onClick={handleCheck}
 
         />
 
