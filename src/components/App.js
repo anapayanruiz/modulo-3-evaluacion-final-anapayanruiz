@@ -17,11 +17,13 @@ class App extends React.Component {
       characters: [],
       searchInput: '',
       searchRadio: 'all',
+      searchCheck: false,
     };
 
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
 
 
@@ -50,18 +52,38 @@ class App extends React.Component {
     })
   }
 
-
+  handleCheck(data) {
+    this.setState({
+      searchCheck: data.valueCheck
+    })
+  }
   // filter
 
   filterBySearch() {
     let characters = this.state.characters;
     const searchInput = this.state.searchInput;
     const searchRadio = this.state.searchRadio;
+    const searchCheck = this.state.searchCheck;
+
     if (searchRadio !== 'all') {
       characters = this.filter(characters, 'gender', searchRadio, true);
     }
     characters = this.filter(characters, 'name', searchInput, false);
-    return characters;
+
+
+    return characters.filter(character => {
+
+      if (searchCheck === false) {
+        return true;
+      }
+      if (character.location.name === character.origin.name) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+
   }
 
   filter = (array, atribute, search, equal) => {
@@ -87,6 +109,8 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state.searchCheck);
+
     return (
       <div className="page" >
         <Header alt="Ricky y Morty logo" />
@@ -95,8 +119,10 @@ class App extends React.Component {
             <Filters
               searchRadio={this.state.searchRadio}
               searchInput={this.state.searchInput}
+              searchCheck={this.state.searchCheck}
               handleClick={this.handleClick}
-              handleSearch={this.handleSearch} />
+              handleSearch={this.handleSearch}
+              handleCheck={this.handleCheck} />
             <CharacterList characters={this.filterBySearch()} />
           </Route>
           <Route path='/character/:id' render={this.renderCharacterDetail}>
