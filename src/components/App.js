@@ -71,7 +71,7 @@ class App extends React.Component {
     characters = this.filter(characters, 'name', searchInput, false);
 
 
-    return characters.filter(character => {
+    characters = characters.filter(character => {
 
       if (searchCheck === false) {
         return true;
@@ -83,6 +83,7 @@ class App extends React.Component {
       }
     });
 
+    return characters
 
   }
 
